@@ -13,13 +13,13 @@
     }
 
     body {
-      background: var(--tg-theme-bg-color, #f4f7fc);
+      background: #f4f7fc;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       padding: 20px 16px 40px;
-      color: var(--tg-theme-text-color, #0b1a33);
+      color: #0b1a33;
     }
 
     .container {
@@ -39,7 +39,7 @@
     .header h1 {
       font-size: 24px;
       font-weight: 600;
-      color: var(--tg-theme-text-color, #0b1a33);
+      color: #0b1a33;
       letter-spacing: 0.5px;
     }
 
@@ -50,13 +50,22 @@
     }
 
     .header .badge {
-      background: var(--tg-theme-secondary-bg-color, #eef2f7);
-      color: var(--tg-theme-hint-color, #2c3e5c);
+      background: #eef2f7;
+      color: #2c3e5c;
       font-size: 14px;
       font-weight: 500;
       padding: 6px 14px;
       border-radius: 30px;
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .mode-indicator {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #fff3e0;
+      color: #e65100;
+      font-weight: 500;
     }
 
     .menu-btn {
@@ -66,13 +75,13 @@
       padding: 6px;
       border-radius: 8px;
       transition: background 0.2s;
-      color: var(--tg-theme-text-color, #0b1a33);
+      color: #0b1a33;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .menu-btn:active {
-      background: var(--tg-theme-secondary-bg-color, rgba(0,0,0,0.05));
+      background: rgba(0,0,0,0.05);
     }
     .menu-btn svg {
       width: 28px;
@@ -86,10 +95,10 @@
       position: absolute;
       top: 56px;
       right: 4px;
-      background: var(--tg-theme-bg-color, #ffffff);
-      border-radius: 12px;
+      background: #ffffff;
+      border-radius: 8px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-      border: 1px solid var(--tg-theme-secondary-bg-color, #eef2f7);
+      border: 1px solid #eef2f7;
       padding: 8px 0;
       min-width: 160px;
       opacity: 0;
@@ -114,13 +123,13 @@
       background: none;
       font-size: 14px;
       font-weight: 500;
-      color: var(--tg-theme-text-color, #0b1a33);
+      color: #0b1a33;
       cursor: pointer;
       transition: background 0.15s;
       text-align: left;
     }
     .dropdown-menu button:active {
-      background: var(--tg-theme-secondary-bg-color, rgba(0,0,0,0.05));
+      background: rgba(0,0,0,0.05);
     }
     .dropdown-menu button .icon {
       font-size: 18px;
@@ -128,7 +137,7 @@
     }
     .dropdown-menu .divider {
       height: 1px;
-      background: var(--tg-theme-secondary-bg-color, #eef2f7);
+      background: #eef2f7;
       margin: 4px 12px;
     }
 
@@ -140,7 +149,7 @@
     }
 
     .bank-card {
-      background: var(--tg-theme-bg-color, #ffffff);
+      background: #ffffff;
       border-radius: 8px;
       padding: 18px 18px 18px 16px;
       box-shadow: 0 12px 28px rgba(0, 10, 30, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
@@ -148,28 +157,11 @@
       backdrop-filter: blur(2px);
       display: flex;
       flex-direction: column;
-      position: relative;
-    }
-
-    .card-delete {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: rgba(231, 76, 60, 0.1);
-      border: none;
-      color: #e74c3c;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      font-size: 16px;
       cursor: pointer;
-      transition: background 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      transition: transform 0.15s ease, box-shadow 0.2s;
     }
-    .card-delete:active {
-      background: rgba(231, 76, 60, 0.3);
+    .bank-card:active {
+      transform: scale(0.98);
     }
 
     .card-body {
@@ -183,20 +175,14 @@
       width: 150px;
       height: 90px;
       border-radius: 6px;
-      background: var(--tg-theme-secondary-bg-color, #e9edf4);
+      background: #e9edf4;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
       border: 1px solid rgba(255,255,255,0.6);
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.2s;
       position: relative;
-    }
-
-    .card-image-wrapper:active {
-      transform: scale(0.96);
     }
 
     .card-image-wrapper img {
@@ -236,8 +222,8 @@
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.2px;
-      color: var(--tg-theme-text-color, #1e2f4a);
-      background: var(--tg-theme-secondary-bg-color, rgba(0, 0, 0, 0.04));
+      color: #1e2f4a;
+      background: rgba(0, 0, 0, 0.04);
       padding: 2px 10px 2px 8px;
       border-radius: 16px;
       border: 1px solid rgba(255, 255, 255, 0.25);
@@ -251,7 +237,7 @@
     .card-name {
       font-size: 16px;
       font-weight: 600;
-      color: var(--tg-theme-text-color, #0b1a33);
+      color: #0b1a33;
       line-height: 1.2;
       word-break: break-word;
     }
@@ -267,8 +253,8 @@
 
     .card-extra {
       font-size: 11px;
-      color: var(--tg-theme-hint-color, #3a4e6b);
-      background: var(--tg-theme-secondary-bg-color, rgba(0, 0, 0, 0.02));
+      color: #3a4e6b;
+      background: rgba(0, 0, 0, 0.02);
       padding: 2px 10px;
       border-radius: 16px;
       font-weight: 450;
@@ -280,33 +266,33 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      color: var(--tg-theme-hint-color, #2b405e);
+      color: #2b405e;
       font-size: 11px;
       font-weight: 500;
-      background: var(--tg-theme-secondary-bg-color, #eef2f8);
+      background: #eef2f8;
       padding: 2px 10px 2px 8px;
       border-radius: 16px;
       line-height: 1.8;
     }
     .card-num span {
       font-weight: 600;
-      color: var(--tg-theme-text-color, #0b1a33);
+      color: #0b1a33;
     }
 
-    .bank-card.color-1 { background: linear-gradient(145deg, #f0f4fe, var(--tg-theme-bg-color, #ffffff)); border-color: rgba(80, 120, 220, 0.15); }
-    .bank-card.color-2 { background: linear-gradient(145deg, #f2f6f0, var(--tg-theme-bg-color, #ffffff)); border-color: rgba(60, 160, 100, 0.15); }
-    .bank-card.color-3 { background: linear-gradient(145deg, #f0f2f8, var(--tg-theme-bg-color, #ffffff)); border-color: rgba(120, 100, 200, 0.15); }
-    .bank-card.color-4 { background: linear-gradient(145deg, #fcf3ed, var(--tg-theme-bg-color, #ffffff)); border-color: rgba(200, 120, 80, 0.15); }
+    .bank-card.color-1 { background: linear-gradient(145deg, #f0f4fe, #ffffff); border-color: rgba(80, 120, 220, 0.15); }
+    .bank-card.color-2 { background: linear-gradient(145deg, #f2f6f0, #ffffff); border-color: rgba(60, 160, 100, 0.15); }
+    .bank-card.color-3 { background: linear-gradient(145deg, #f0f2f8, #ffffff); border-color: rgba(120, 100, 200, 0.15); }
+    .bank-card.color-4 { background: linear-gradient(145deg, #fcf3ed, #ffffff); border-color: rgba(200, 120, 80, 0.15); }
 
     .empty-state {
       text-align: center;
-      background: var(--tg-theme-bg-color, #ffffffd0);
+      background: #ffffffd0;
       backdrop-filter: blur(4px);
       padding: 48px 20px;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.02);
       border: 1px dashed #cbd5e1;
-      color: var(--tg-theme-hint-color, #4b5e7a);
+      color: #4b5e7a;
       margin-top: 30px;
     }
     .empty-state p {
@@ -317,20 +303,20 @@
       display: block;
       margin-top: 12px;
       font-size: 14px;
-      color: var(--tg-theme-hint-color, #718096);
+      color: #718096;
     }
 
     .loading-state {
       text-align: center;
       padding: 40px 20px;
-      color: var(--tg-theme-hint-color, #718096);
+      color: #718096;
     }
     .loading-state .spinner {
       display: inline-block;
       width: 30px;
       height: 30px;
-      border: 3px solid var(--tg-theme-secondary-bg-color, #eef2f7);
-      border-top: 3px solid var(--tg-theme-button-color, #3390ec);
+      border: 3px solid #eef2f7;
+      border-top: 3px solid #3390ec;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
@@ -338,14 +324,14 @@
       to { transform: rotate(360deg); }
     }
 
-    /* Lightbox */
-    .lightbox-overlay {
+    /* ===== 详情弹窗 ===== */
+    .detail-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       display: flex;
@@ -354,84 +340,170 @@
       z-index: 9999;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.25s ease, visibility 0.25s;
-      padding: 24px;
+      transition: opacity 0.3s ease, visibility 0.3s;
+      padding: 20px;
       box-sizing: border-box;
     }
-
-    .lightbox-overlay.active {
+    .detail-overlay.active {
       opacity: 1;
       visibility: visible;
     }
 
-    .lightbox-content {
-      max-width: 90vw;
-      max-height: 80vh;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transform: scale(0.92);
-      transition: transform 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    .detail-content {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 24px 20px 20px;
+      max-width: 420px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      transform: scale(0.92) translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
       position: relative;
     }
-
-    .lightbox-overlay.active .lightbox-content {
-      transform: scale(1);
+    .detail-overlay.active .detail-content {
+      transform: scale(1) translateY(0);
     }
 
-    .lightbox-content img {
+    .detail-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #718096;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .detail-close:active {
+      background: rgba(0,0,0,0.05);
+    }
+
+    .detail-image {
+      width: 100%;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #e9edf4;
+      margin-bottom: 16px;
+    }
+    .detail-image img {
       width: 100%;
       height: auto;
-      max-height: 70vh;
-      object-fit: contain;
       display: block;
-      background: #f0f2f6;
-      border-radius: 12px 12px 0 0;
+      max-height: 240px;
+      object-fit: contain;
+    }
+    .detail-image .placeholder {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 48px;
+      opacity: 0.4;
     }
 
-    .lightbox-info {
-      width: 100%;
-      padding: 14px 20px 18px;
+    .detail-field {
+      margin-bottom: 12px;
+    }
+    .detail-field .label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .detail-field .value {
+      font-size: 16px;
+      font-weight: 500;
+      color: #0b1a33;
+      padding: 4px 0;
+      word-break: break-word;
+    }
+    .detail-field .value.editable {
+      border: 1.5px solid transparent;
+      border-radius: 8px;
+      padding: 6px 12px;
+      transition: border-color 0.2s;
+      background: #f8f9fc;
+    }
+    .detail-field .value.editable:focus {
+      outline: none;
+      border-color: #3390ec;
       background: #ffffff;
-      border-radius: 0 0 12px 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
+    }
+    .detail-field .value.editable:read-only {
+      background: transparent;
+      border-color: transparent;
+      cursor: default;
     }
 
-    .lightbox-info .lb-name {
-      font-weight: 600;
-      font-size: 18px;
+    .detail-image-edit {
+      display: none;
+      margin-top: 6px;
+    }
+    .detail-image-edit.active {
+      display: block;
+    }
+    .detail-image-edit input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #eef2f7;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #ffffff;
+      color: #0b1a33;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .detail-image-edit input:focus {
+      border-color: #3390ec;
+    }
+    .detail-image-edit .hint {
+      font-size: 12px;
+      color: #718096;
+      margin-top: 4px;
+    }
+
+    .detail-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #eef2f7;
+    }
+    .detail-actions button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .detail-actions button:active {
+      opacity: 0.7;
+    }
+    .detail-actions .btn-edit {
+      background: #3390ec;
+      color: #ffffff;
+    }
+    .detail-actions .btn-delete {
+      background: #e74c3c;
+      color: #ffffff;
+    }
+    .detail-actions .btn-save {
+      background: #2ecc71;
+      color: #ffffff;
+    }
+    .detail-actions .btn-cancel {
+      background: #eef2f7;
       color: #0b1a33;
     }
 
-    .lightbox-close {
-      background: #eef2f7;
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 16px;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #1f2f47;
-      transition: background 0.15s;
-      flex-shrink: 0;
-    }
-
-    .lightbox-close:active {
-      background: #d5dee9;
-      transform: scale(0.94);
-    }
-
+    /* Toast */
     .toast {
       position: fixed;
       bottom: 20px;
@@ -440,9 +512,9 @@
       background: rgba(0,0,0,0.8);
       color: #fff;
       padding: 10px 24px;
-      border-radius: 12px;
+      border-radius: 8px;
       font-size: 14px;
-      z-index: 10000;
+      z-index: 10001;
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
@@ -453,7 +525,7 @@
       opacity: 1;
     }
 
-    /* ===== 添加卡片弹窗 ===== */
+    /* 添加卡片弹窗 */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -479,8 +551,8 @@
     }
 
     .modal-content {
-      background: var(--tg-theme-bg-color, #ffffff);
-      border-radius: 16px;
+      background: #ffffff;
+      border-radius: 8px;
       padding: 24px 20px 20px;
       max-width: 420px;
       width: 100%;
@@ -497,7 +569,7 @@
     .modal-content h2 {
       font-size: 20px;
       font-weight: 600;
-      color: var(--tg-theme-text-color, #0b1a33);
+      color: #0b1a33;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -505,44 +577,34 @@
     .modal-content .form-group {
       margin-bottom: 16px;
     }
-
     .modal-content .form-group label {
       display: block;
       font-size: 13px;
       font-weight: 500;
-      color: var(--tg-theme-hint-color, #3a4e6b);
+      color: #3a4e6b;
       margin-bottom: 4px;
     }
     .modal-content .form-group label .required {
       color: #e74c3c;
       margin-left: 2px;
     }
-
-    .modal-content .form-group input,
-    .modal-content .form-group textarea {
+    .modal-content .form-group input {
       width: 100%;
       padding: 10px 14px;
-      border: 1.5px solid var(--tg-theme-secondary-bg-color, #eef2f7);
-      border-radius: 10px;
+      border: 1.5px solid #eef2f7;
+      border-radius: 8px;
       font-size: 15px;
-      background: var(--tg-theme-bg-color, #ffffff);
-      color: var(--tg-theme-text-color, #0b1a33);
+      background: #ffffff;
+      color: #0b1a33;
       transition: border-color 0.2s;
       outline: none;
     }
-    .modal-content .form-group input:focus,
-    .modal-content .form-group textarea:focus {
-      border-color: var(--tg-theme-button-color, #3390ec);
+    .modal-content .form-group input:focus {
+      border-color: #3390ec;
     }
-    .modal-content .form-group textarea {
-      resize: vertical;
-      min-height: 40px;
-      font-family: inherit;
-    }
-
     .modal-content .form-group .hint {
       font-size: 12px;
-      color: var(--tg-theme-hint-color, #718096);
+      color: #718096;
       margin-top: 4px;
     }
 
@@ -555,7 +617,7 @@
       flex: 1;
       padding: 12px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 15px;
       font-weight: 500;
       cursor: pointer;
@@ -565,23 +627,12 @@
       opacity: 0.7;
     }
     .modal-actions .btn-cancel {
-      background: var(--tg-theme-secondary-bg-color, #eef2f7);
-      color: var(--tg-theme-text-color, #0b1a33);
+      background: #eef2f7;
+      color: #0b1a33;
     }
     .modal-actions .btn-confirm {
-      background: var(--tg-theme-button-color, #3390ec);
-      color: var(--tg-theme-button-text-color, #ffffff);
-    }
-
-    .modal-content::-webkit-scrollbar {
-      width: 4px;
-    }
-    .modal-content::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .modal-content::-webkit-scrollbar-thumb {
-      background: var(--tg-theme-secondary-bg-color, #d5dee9);
-      border-radius: 4px;
+      background: #3390ec;
+      color: #ffffff;
     }
 
     @media (max-width: 420px) {
@@ -593,11 +644,17 @@
       .card-extra { font-size: 10px; padding: 2px 8px; border-radius: 12px; }
       .card-num { font-size: 10px; padding: 2px 8px 2px 6px; border-radius: 12px; }
       .card-info { padding-right: 0px; }
-      .dropdown-menu { right: 0; min-width: 140px; }
+      .dropdown-menu { right: 0; min-width: 140px; border-radius: 6px; }
       .dropdown-menu button { font-size: 13px; padding: 8px 14px; }
-      .modal-content { padding: 20px 16px 16px; }
+      .detail-content { padding: 20px 16px 16px; border-radius: 6px; }
+      .modal-content { padding: 20px 16px 16px; border-radius: 6px; }
       .modal-content h2 { font-size: 18px; }
-      .modal-content .form-group input { font-size: 14px; padding: 8px 12px; }
+      .modal-content .form-group input { font-size: 14px; padding: 8px 12px; border-radius: 6px; }
+      .detail-actions button { font-size: 13px; padding: 10px; border-radius: 6px; }
+      .modal-actions button { font-size: 13px; padding: 10px; border-radius: 6px; }
+      .detail-image { border-radius: 4px; }
+      .detail-image-edit input { border-radius: 6px; }
+      .toast { border-radius: 6px; }
     }
     @media (max-width: 370px) {
       .card-image-wrapper { width: 100px; height: 64px; }
@@ -611,6 +668,7 @@
     <div class="header">
       <h1>💳 卡包</h1>
       <div class="header-right">
+        <span class="mode-indicator">💾 本地</span>
         <span class="badge" id="cardCount">0 张</span>
         <button class="menu-btn" id="menuBtn" aria-label="菜单">
           <svg viewBox="0 0 24 24">
@@ -621,7 +679,7 @@
         </button>
         <div class="dropdown-menu" id="dropdownMenu">
           <button id="addCardBtn"><span class="icon">➕</span> 添加卡片</button>
-          <button id="refreshBtn"><span class="icon">🔄</span> 同步数据</button>
+          <button id="refreshBtn"><span class="icon">🔄</span> 刷新</button>
           <div class="divider"></div>
           <button id="clearAllBtn" style="color:#e74c3c;"><span class="icon">🗑️</span> 清空全部</button>
         </div>
@@ -667,13 +725,36 @@
     </div>
   </div>
 
-  <!-- Lightbox -->
-  <div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-content">
-      <img id="lightboxImg" src="" alt="银行卡大图">
-      <div class="lightbox-info">
-        <span class="lb-name" id="lbName">卡片名称</span>
-        <button class="lightbox-close" id="lightboxClose">✕</button>
+  <!-- 详情弹窗 -->
+  <div class="detail-overlay" id="detailOverlay">
+    <div class="detail-content">
+      <button class="detail-close" id="detailClose">✕</button>
+      <div class="detail-image" id="detailImage">
+        <img id="detailImg" src="" alt="银行卡">
+      </div>
+      <div class="detail-field">
+        <div class="label">卡片名称</div>
+        <div class="value editable" id="detailName" contenteditable="false">-</div>
+      </div>
+      <div class="detail-field">
+        <div class="label">卡片类型</div>
+        <div class="value editable" id="detailExtra" contenteditable="false">-</div>
+      </div>
+      <div class="detail-field">
+        <div class="label">卡号后四位</div>
+        <div class="value editable" id="detailCardNum" contenteditable="false">-</div>
+      </div>
+      <div class="detail-field" id="detailImageField">
+        <div class="label">卡片图片 URL</div>
+        <div class="value" id="detailImageUrl" style="font-size:13px;color:#718096;word-break:break-all;">-</div>
+        <div class="detail-image-edit" id="detailImageEdit">
+          <input type="text" id="detailImageInput" placeholder="输入新的图片 URL">
+          <div class="hint">留空将使用默认图片</div>
+        </div>
+      </div>
+      <div class="detail-actions" id="detailActions">
+        <button class="btn-edit" id="detailEditBtn">✏️ 编辑</button>
+        <button class="btn-delete" id="detailDeleteBtn">🗑️ 删除</button>
       </div>
     </div>
   </div>
@@ -683,54 +764,70 @@
   <script>
     (function() {
       // ============================================================
-      //  Telegram Web App 安全初始化
-      //  使用 try-catch 包裹所有 Telegram API 调用
+      //  配置
       // ============================================================
-      let tg = null;
-      let tgReady = false;
+      const STORAGE_KEY = 'bank_cards_local';
+      const DEFAULT_IMAGE = 'https://content.95516.com/cards/default/03080000/01/2ccb3c79-1f69-4554-bbc6-1bfa6ec671a0.png';
+      const colorPool = ['color-1', 'color-2', 'color-3', 'color-4'];
 
-      try {
-        // 检查 Telegram WebApp 是否可用
-        if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
-          tg = window.Telegram.WebApp;
-
-          // 安全调用 ready
-          if (typeof tg.ready === 'function') {
-            tg.ready();
-            tgReady = true;
-          }
-
-          // 安全调用 expand
-          if (typeof tg.expand === 'function') {
-            tg.expand();
-          }
-
-          // 应用主题颜色
-          if (tg.themeParams) {
-            const p = tg.themeParams;
-            document.documentElement.style.setProperty('--tg-theme-bg-color', p.bg_color || '#f4f7fc');
-            document.documentElement.style.setProperty('--tg-theme-text-color', p.text_color || '#0b1a33');
-            document.documentElement.style.setProperty('--tg-theme-hint-color', p.hint_color || '#2c3e5c');
-            document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', p.secondary_bg_color || '#eef2f7');
-            document.documentElement.style.setProperty('--tg-theme-button-color', p.button_color || '#3390ec');
-            document.documentElement.style.setProperty('--tg-theme-button-text-color', p.button_text_color || '#ffffff');
-          }
-
-          console.log('✅ Telegram WebApp 初始化成功');
-        } else {
-          console.warn('⚠️ Telegram WebApp 不可用，使用降级模式');
-        }
-      } catch (e) {
-        console.warn('⚠️ Telegram WebApp 初始化失败:', e.message);
-        tg = null;
-        tgReady = false;
+      // ============================================================
+      //  数据存储
+      // ============================================================
+      function generateId() {
+        return Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 6);
       }
 
-      // ============================================================
-      //  🔧 配置
-      // ============================================================
-      const API_BASE = 'https://cardman-api.sijike.com';
-      const DEFAULT_IMAGE = 'https://content.95516.com/cards/default/03080000/01/2ccb3c79-1f69-4554-bbc6-1bfa6ec671a0.png';
+      function getCards() {
+        try {
+          const data = localStorage.getItem(STORAGE_KEY);
+          return data ? JSON.parse(data) : [];
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveCards(cards) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(cards));
+        } catch (e) {
+          console.error('保存失败:', e);
+        }
+      }
+
+      function createCard(card) {
+        const cards = getCards();
+        const newCard = {
+          id: generateId(),
+          ...card,
+          created_at: new Date().toISOString()
+        };
+        cards.push(newCard);
+        saveCards(cards);
+        return newCard;
+      }
+
+      function updateCard(id, updates) {
+        const cards = getCards();
+        const index = cards.findIndex(c => c.id === id);
+        if (index === -1) return null;
+        cards[index] = { ...cards[index], ...updates };
+        saveCards(cards);
+        return cards[index];
+      }
+
+      function deleteCard(id) {
+        let cards = getCards();
+        cards = cards.filter(c => c.id !== id);
+        saveCards(cards);
+        return true;
+      }
+
+      function clearAllCards() {
+        const cards = getCards();
+        const count = cards.length;
+        saveCards([]);
+        return count;
+      }
 
       // ============================================================
       //  菜单控制
@@ -766,13 +863,13 @@
       const cardNumInput = document.getElementById('cardNum');
       const cardImageInput = document.getElementById('cardImage');
 
-      function openModal() {
+      function openAddModal() {
         addModal.classList.add('active');
         document.body.style.overflow = 'hidden';
         setTimeout(() => cardNameInput.focus(), 100);
       }
 
-      function closeModal() {
+      function closeAddModal() {
         addModal.classList.remove('active');
         document.body.style.overflow = '';
         addForm.reset();
@@ -781,183 +878,207 @@
         });
       }
 
-      document.getElementById('modalCancel').addEventListener('click', closeModal);
+      document.getElementById('modalCancel').addEventListener('click', closeAddModal);
       addModal.addEventListener('click', function(e) {
-        if (e.target === addModal) closeModal();
+        if (e.target === addModal) closeAddModal();
       });
 
       // ============================================================
-      //  工具函数（安全获取用户ID）
+      //  详情弹窗控制
       // ============================================================
-      function getUserId() {
-        try {
-          // 优先从 Telegram 获取真实用户ID
-          if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
-            return String(tg.initDataUnsafe.user.id);
-          }
-        } catch (e) {
-          console.warn('获取 Telegram 用户ID失败，使用降级ID');
-        }
+      const detailOverlay = document.getElementById('detailOverlay');
+      const detailClose = document.getElementById('detailClose');
+      const detailImg = document.getElementById('detailImg');
+      const detailName = document.getElementById('detailName');
+      const detailExtra = document.getElementById('detailExtra');
+      const detailCardNum = document.getElementById('detailCardNum');
+      const detailImageUrl = document.getElementById('detailImageUrl');
+      const detailImageInput = document.getElementById('detailImageInput');
+      const detailImageEdit = document.getElementById('detailImageEdit');
+      const detailActions = document.getElementById('detailActions');
 
-        // 降级方案：使用 localStorage 模拟用户ID
-        let devId = localStorage.getItem('dev_user_id');
-        if (!devId) {
-          devId = 'dev_' + Date.now();
-          localStorage.setItem('dev_user_id', devId);
+      let currentDetailCard = null;
+      let isEditing = false;
+
+      // 重新绑定详情按钮事件
+      function bindDetailEvents() {
+        const editBtn = document.getElementById('detailEditBtn');
+        const deleteBtn = document.getElementById('detailDeleteBtn');
+        const cancelBtn = document.getElementById('detailCancelBtn');
+        const saveBtn = document.getElementById('detailSaveBtn');
+
+        if (editBtn) {
+          editBtn.removeEventListener('click', enterEditMode);
+          editBtn.addEventListener('click', enterEditMode);
         }
-        return devId;
+        if (deleteBtn) {
+          deleteBtn.removeEventListener('click', handleDelete);
+          deleteBtn.addEventListener('click', handleDelete);
+        }
+        if (cancelBtn) {
+          cancelBtn.removeEventListener('click', cancelEditMode);
+          cancelBtn.addEventListener('click', cancelEditMode);
+        }
+        if (saveBtn) {
+          saveBtn.removeEventListener('click', handleSave);
+          saveBtn.addEventListener('click', handleSave);
+        }
       }
 
-      function showToast(msg, duration = 2500) {
-        const el = document.getElementById('toast');
-        el.textContent = msg;
-        el.classList.add('show');
-        clearTimeout(el._timer);
-        el._timer = setTimeout(() => el.classList.remove('show'), duration);
+      function openDetail(card) {
+        currentDetailCard = card;
+        isEditing = false;
+        renderDetail(card);
+        detailOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // 重新绑定事件
+        setTimeout(bindDetailEvents, 50);
       }
 
-      function showLoading() {
-        document.getElementById('cardList').innerHTML = `
-          <div class="loading-state">
-            <div class="spinner"></div>
-            <p style="margin-top:12px;">加载中...</p>
-          </div>
+      function closeDetail() {
+        detailOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        currentDetailCard = null;
+        isEditing = false;
+        detailImageEdit.classList.remove('active');
+        // 恢复只读
+        [detailName, detailExtra, detailCardNum].forEach(el => {
+          el.contentEditable = 'false';
+          el.style.borderColor = 'transparent';
+          el.style.background = 'transparent';
+        });
+        detailImageInput.value = '';
+        // 重建按钮
+        detailActions.innerHTML = `
+          <button class="btn-edit" id="detailEditBtn">✏️ 编辑</button>
+          <button class="btn-delete" id="detailDeleteBtn">🗑️ 删除</button>
         `;
+        bindDetailEvents();
       }
 
-      // 安全触发 Telegram 震动反馈
-      function safeHaptic(type) {
-        try {
-          if (tg && tg.HapticFeedback) {
-            if (type === 'light' && typeof tg.HapticFeedback.lightImpact === 'function') {
-              tg.HapticFeedback.lightImpact();
-            } else if (type === 'success' && typeof tg.HapticFeedback.notificationOccurred === 'function') {
-              tg.HapticFeedback.notificationOccurred('success');
-            }
+      function renderDetail(card) {
+        if (!card) return;
+        if (card.image && card.image.trim() !== '') {
+          detailImg.src = card.image;
+          detailImg.style.display = 'block';
+          const placeholder = detailImg.parentElement.querySelector('.placeholder');
+          if (placeholder) placeholder.remove();
+        } else {
+          detailImg.style.display = 'none';
+          if (!detailImg.parentElement.querySelector('.placeholder')) {
+            const placeholder = document.createElement('div');
+            placeholder.className = 'placeholder';
+            placeholder.textContent = '🏦';
+            detailImg.parentElement.appendChild(placeholder);
           }
-        } catch (e) {
-          // 忽略震动反馈错误
         }
+        detailName.textContent = card.name || '未命名';
+        detailExtra.textContent = card.extra || '银行卡';
+        detailCardNum.textContent = card.cardNum || '••••';
+        detailImageUrl.textContent = card.image || '(未设置)';
+        detailImageInput.value = card.image || '';
       }
 
-      // ============================================================
-      //  API 调用
-      // ============================================================
-      async function apiFetch(endpoint, options = {}) {
-        const url = `${API_BASE}${endpoint}`;
-        const headers = {
-          'Content-Type': 'application/json',
-          'X-User-Id': getUserId(),
-          ...options.headers
+      function enterEditMode() {
+        if (isEditing || !currentDetailCard) return;
+        isEditing = true;
+        [detailName, detailExtra, detailCardNum].forEach(el => {
+          el.contentEditable = 'true';
+          el.style.borderColor = '#3390ec';
+          el.style.background = '#f8f9fc';
+        });
+        detailImageEdit.classList.add('active');
+        detailImageInput.value = currentDetailCard.image || '';
+        detailName.focus();
+        detailActions.innerHTML = `
+          <button class="btn-cancel" id="detailCancelBtn">取消</button>
+          <button class="btn-save" id="detailSaveBtn">💾 保存</button>
+        `;
+        bindDetailEvents();
+      }
+
+      function cancelEditMode() {
+        if (!currentDetailCard) return;
+        isEditing = false;
+        renderDetail(currentDetailCard);
+        detailImageEdit.classList.remove('active');
+        [detailName, detailExtra, detailCardNum].forEach(el => {
+          el.contentEditable = 'false';
+          el.style.borderColor = 'transparent';
+          el.style.background = 'transparent';
+        });
+        detailActions.innerHTML = `
+          <button class="btn-edit" id="detailEditBtn">✏️ 编辑</button>
+          <button class="btn-delete" id="detailDeleteBtn">🗑️ 删除</button>
+        `;
+        bindDetailEvents();
+      }
+
+      async function handleSave() {
+        if (!currentDetailCard) return;
+        const name = detailName.textContent.trim();
+        const extra = detailExtra.textContent.trim();
+        const cardNum = detailCardNum.textContent.trim();
+        const image = detailImageInput.value.trim();
+
+        if (!name) {
+          showToast('卡片名称不能为空');
+          detailName.focus();
+          return;
+        }
+        if (!extra) {
+          showToast('卡片类型不能为空');
+          detailExtra.focus();
+          return;
+        }
+        if (!cardNum || cardNum.length !== 4 || !/^\d{4}$/.test(cardNum)) {
+          showToast('请输入4位数字卡号');
+          detailCardNum.focus();
+          return;
+        }
+
+        const updates = {
+          name: name,
+          extra: extra,
+          cardNum: cardNum
         };
-        const resp = await fetch(url, { ...options, headers });
-        if (!resp.ok) {
-          const err = await resp.text();
-          throw new Error(err || `HTTP ${resp.status}`);
+        // 图片：如果用户输入了内容则更新，否则使用默认图片
+        if (image !== undefined && image !== null && image.trim() !== '') {
+          updates.image = image.trim();
+        } else if (image !== undefined && image !== null && image.trim() === '') {
+          updates.image = DEFAULT_IMAGE;
         }
-        return resp.json();
-      }
 
-      async function loadCards() {
-        try {
-          const data = await apiFetch('/cards');
-          return data.cards || [];
-        } catch (e) {
-          console.error('加载卡片失败:', e);
-          showToast('加载失败: ' + e.message);
-          return [];
-        }
-      }
+        const updated = updateCard(currentDetailCard.id, updates);
 
-      async function createCard(card) {
-        try {
-          const result = await apiFetch('/cards', {
-            method: 'POST',
-            body: JSON.stringify(card)
-          });
-          return result.card;
-        } catch (e) {
-          console.error('创建卡片失败:', e);
-          showToast('创建失败: ' + e.message);
-          throw e;
+        if (updated) {
+          currentDetailCard = updated;
+          showToast('已更新 ✅');
+          await refreshCards();
+          renderDetail(updated);
+          cancelEditMode();
         }
       }
 
-      async function deleteCard(cardId) {
-        try {
-          await apiFetch(`/cards/${cardId}`, {
-            method: 'DELETE'
-          });
-          return true;
-        } catch (e) {
-          console.error('删除卡片失败:', e);
-          showToast('删除失败: ' + e.message);
-          throw e;
-        }
+      async function handleDelete() {
+        if (!currentDetailCard) return;
+        if (!confirm(`确定要删除「${currentDetailCard.name}」吗？`)) return;
+        deleteCard(currentDetailCard.id);
+        showToast('已删除');
+        closeDetail();
+        await refreshCards();
       }
 
-      async function clearAllCards() {
-        try {
-          const result = await apiFetch('/cards/clear', {
-            method: 'DELETE'
-          });
-          return result.deleted || 0;
-        } catch (e) {
-          console.error('清空卡片失败:', e);
-          showToast('清空失败: ' + e.message);
-          throw e;
-        }
-      }
+      detailClose.addEventListener('click', closeDetail);
+      detailOverlay.addEventListener('click', function(e) {
+        if (e.target === detailOverlay) closeDetail();
+      });
 
       // ============================================================
-      //  渲染
+      //  渲染列表
       // ============================================================
       const cardListEl = document.getElementById('cardList');
       const countBadge = document.getElementById('cardCount');
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightboxImg');
-      const lbName = document.getElementById('lbName');
-      const lightboxClose = document.getElementById('lightboxClose');
-
-      const colorPool = ['color-1', 'color-2', 'color-3', 'color-4'];
-
-      function openLightbox(imageUrl, name) {
-        if (!imageUrl) return;
-        lightboxImg.src = imageUrl;
-        lbName.textContent = name || '银行卡';
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-
-      lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) closeLightbox();
-      });
-      lightboxClose.addEventListener('click', closeLightbox);
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeLightbox();
-      });
-
-      window.__openCardImage = function(el) {
-        const image = el.dataset.image;
-        const name = el.dataset.name;
-        if (image && image.trim() !== '') {
-          openLightbox(image, name);
-        }
-      };
-
-      window.__deleteCard = async function(cardId) {
-        if (!confirm('确定要删除这张卡片吗？')) return;
-        try {
-          await deleteCard(cardId);
-          showToast('已删除 ✅');
-          await refreshCards();
-        } catch (e) {}
-      };
 
       async function renderCards(cards) {
         if (!cards || cards.length === 0) {
@@ -979,7 +1100,7 @@
           const extra = card.extra || '银行卡';
           const imageUrl = card.image || null;
           const cardNum = card.cardNum || '••••';
-          const cardId = card.id || index;
+          const cardId = card.id;
 
           let imageHtml = '';
           if (imageUrl && imageUrl.trim() !== '') {
@@ -991,13 +1112,9 @@
           const cardTypeHtml = type ? `<span class="card-type">${type}</span>` : '';
 
           html += `
-            <div class="bank-card ${colorClass}">
-              <button class="card-delete" data-id="${cardId}" onclick="window.__deleteCard('${cardId}')">✕</button>
+            <div class="bank-card ${colorClass}" data-id="${cardId}" onclick="window.__openDetail('${cardId}')">
               <div class="card-body">
-                <div class="card-image-wrapper"
-                     data-image="${imageUrl || ''}"
-                     data-name="${name}"
-                     onclick="window.__openCardImage(this)">
+                <div class="card-image-wrapper">
                   ${imageHtml}
                 </div>
                 <div class="card-info">
@@ -1019,39 +1136,42 @@
         countBadge.textContent = `${cards.length} 张`;
       }
 
+      // 全局打开详情
+      window.__openDetail = function(cardId) {
+        const cards = getCards();
+        const card = cards.find(c => c.id === cardId);
+        if (card) {
+          openDetail(card);
+        }
+      };
+
       // ============================================================
       //  数据管理
       // ============================================================
       let currentCards = [];
 
       async function refreshCards() {
-        showLoading();
-        try {
-          currentCards = await loadCards();
-          await renderCards(currentCards);
-        } catch (e) {
-          console.error('刷新失败:', e);
-          showToast('刷新失败: ' + e.message);
-        }
+        cardListEl.innerHTML = `
+          <div class="loading-state">
+            <div class="spinner"></div>
+            <p style="margin-top:12px;">加载中...</p>
+          </div>
+        `;
+        currentCards = getCards();
+        await renderCards(currentCards);
       }
 
       // ============================================================
-      //  添加卡片（弹窗版本）
+      //  添加卡片
       // ============================================================
-      function showAddCardModal() {
-        openModal();
-      }
-
       addForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // 获取并验证数据
         const name = cardNameInput.value.trim();
         const extra = cardExtraInput.value.trim();
         const cardNum = cardNumInput.value.trim();
         let image = cardImageInput.value.trim();
 
-        // 验证必填字段
         let hasError = false;
         if (!name) {
           cardNameInput.style.borderColor = '#e74c3c';
@@ -1075,7 +1195,6 @@
 
         if (hasError) return;
 
-        // 如果没有图片，使用默认图片
         if (!image) {
           image = DEFAULT_IMAGE;
         }
@@ -1089,36 +1208,35 @@
           colorClass: colorPool[currentCards.length % colorPool.length]
         };
 
-        try {
-          const created = await createCard(newCard);
-          showToast('卡片已添加 ✅');
-          safeHaptic('light');
-          closeModal();
-          await refreshCards();
-        } catch (e) {}
+        createCard(newCard);
+        showToast('卡片已添加 ✅');
+        closeAddModal();
+        await refreshCards();
       });
 
       // ============================================================
-      //  清空全部
+      //  工具函数
       // ============================================================
-      async function clearAll() {
-        if (!confirm('⚠️ 确定要删除所有卡片吗？此操作不可恢复！')) return;
-        try {
-          const count = await clearAllCards();
-          showToast(`已清空 ${count} 张卡片`);
-          await refreshCards();
-          safeHaptic('success');
-        } catch (e) {}
+      function showToast(msg, duration = 2500) {
+        const el = document.getElementById('toast');
+        el.textContent = msg;
+        el.classList.add('show');
+        clearTimeout(el._timer);
+        el._timer = setTimeout(() => el.classList.remove('show'), duration);
       }
 
       // ============================================================
       //  绑定事件
       // ============================================================
-      document.getElementById('addCardBtn').addEventListener('click', showAddCardModal);
+      document.getElementById('addCardBtn').addEventListener('click', openAddModal);
       document.getElementById('refreshBtn').addEventListener('click', refreshCards);
-      document.getElementById('clearAllBtn').addEventListener('click', clearAll);
+      document.getElementById('clearAllBtn').addEventListener('click', async function() {
+        if (!confirm('⚠️ 确定要删除所有卡片吗？此操作不可恢复！')) return;
+        const count = clearAllCards();
+        showToast(`已清空 ${count} 张卡片`);
+        await refreshCards();
+      });
 
-      // 卡号输入限制：只允许数字，最多4位
       cardNumInput.addEventListener('input', function() {
         this.value = this.value.replace(/\D/g, '').slice(0, 4);
         if (this.value.length === 4) {
@@ -1126,18 +1244,25 @@
         }
       });
 
+      // 初始化绑定详情事件
+      bindDetailEvents();
+
       // ============================================================
       //  启动
       // ============================================================
       refreshCards();
 
-      console.log('💡 Cloudflare 版银行卡小程序已启动');
-      console.log('API地址:', API_BASE);
-      console.log('用户ID:', getUserId());
-      console.log('Telegram WebApp 就绪:', tgReady);
+      console.log('💡 银行卡小程序已启动 (本地存储模式)');
+      console.log('数据存储在 localStorage，key:', STORAGE_KEY);
 
       window.__refresh = refreshCards;
       window.__cards = () => currentCards;
+      window.__getCards = getCards;
+      window.__openDetail = function(cardId) {
+        const cards = getCards();
+        const card = cards.find(c => c.id === cardId);
+        if (card) openDetail(card);
+      };
     })();
   </script>
 </body>
