@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>Cardman</title>
-  <!-- Telegram Web App SDK -->
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <title>银行卡列表</title>
   <style>
     * {
       margin: 0;
@@ -575,7 +573,6 @@
       color: var(--tg-theme-button-text-color, #ffffff);
     }
 
-    /* 滚动条美化 */
     .modal-content::-webkit-scrollbar {
       width: 4px;
     }
@@ -686,24 +683,53 @@
   <script>
     (function() {
       // ============================================================
-      //  Telegram Web App 初始化
+      //  Telegram Web App 安全初始化
+      //  使用 try-catch 包裹所有 Telegram API 调用
       // ============================================================
-      let tg = window.Telegram?.WebApp;
-      if (tg) {
-        tg.ready();
-        tg.expand();
-        document.documentElement.style.setProperty('--tg-theme-bg-color', tg.themeParams.bg_color || '#f4f7fc');
-        document.documentElement.style.setProperty('--tg-theme-text-color', tg.themeParams.text_color || '#0b1a33');
-        document.documentElement.style.setProperty('--tg-theme-hint-color', tg.themeParams.hint_color || '#2c3e5c');
-        document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', tg.themeParams.secondary_bg_color || '#eef2f7');
-        document.documentElement.style.setProperty('--tg-theme-button-color', tg.themeParams.button_color || '#3390ec');
-        document.documentElement.style.setProperty('--tg-theme-button-text-color', tg.themeParams.button_text_color || '#ffffff');
+      let tg = null;
+      let tgReady = false;
+
+      try {
+        // 检查 Telegram WebApp 是否可用
+        if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
+          tg = window.Telegram.WebApp;
+          
+          // 安全调用 ready
+          if (typeof tg.ready === 'function') {
+            tg.ready();
+            tgReady = true;
+          }
+          
+          // 安全调用 expand
+          if (typeof tg.expand === 'function') {
+            tg.expand();
+          }
+          
+          // 应用主题颜色
+          if (tg.themeParams) {
+            const p = tg.themeParams;
+            document.documentElement.style.setProperty('--tg-theme-bg-color', p.bg_color || '#f4f7fc');
+            document.documentElement.style.setProperty('--tg-theme-text-color', p.text_color || '#0b1a33');
+            document.documentElement.style.setProperty('--tg-theme-hint-color', p.hint_color || '#2c3e5c');
+            document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', p.secondary_bg_color || '#eef2f7');
+            document.documentElement.style.setProperty('--tg-theme-button-color', p.button_color || '#3390ec');
+            document.documentElement.style.setProperty('--tg-theme-button-text-color', p.button_text_color || '#ffffff');
+          }
+          
+          console.log('✅ Telegram WebApp 初始化成功');
+        } else {
+          console.warn('⚠️ Telegram WebApp 不可用，使用降级模式');
+        }
+      } catch (e) {
+        console.warn('⚠️ Telegram WebApp 初始化失败:', e.message);
+        tg = null;
+        tgReady = false;
       }
 
       // ============================================================
       //  🔧 配置
       // ============================================================
-      const API_BASE = 'https://cardman-api.sijike.com';
+      const API_BASE = 'https://your-worker.your-subdomain.workers.dev';
       const DEFAULT_IMAGE = 'https://content.95516.com/cards/default/03080000/01/2ccb3c79-1f69-4554-bbc6-1bfa6ec671a0.png';
 
       // ============================================================
@@ -743,7 +769,6 @@
       function openModal() {
         addModal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        // 聚焦第一个输入框
         setTimeout(() => cardNameInput.focus(), 100);
       }
 
@@ -751,7 +776,6 @@
         addModal.classList.remove('active');
         document.body.style.overflow = '';
         addForm.reset();
-        // 清除错误状态
         document.querySelectorAll('.form-group input').forEach(el => {
           el.style.borderColor = '';
         });
@@ -763,12 +787,19 @@
       });
 
       // ============================================================
-      //  工具函数
+      //  工具函数（安全获取用户ID）
       // ============================================================
       function getUserId() {
-        if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
-          return String(tg.initDataUnsafe.user.id);
+        try {
+          // 优先从 Telegram 获取真实用户ID
+          if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user) {
+            return String(tg.initDataUnsafe.user.id);
+          }
+        } catch (e) {
+          console.warn('获取 Telegram 用户ID失败，使用降级ID');
         }
+        
+        // 降级方案：使用 localStorage 模拟用户ID
         let devId = localStorage.getItem('dev_user_id');
         if (!devId) {
           devId = 'dev_' + Date.now();
@@ -792,6 +823,21 @@
             <p style="margin-top:12px;">加载中...</p>
           </div>
         `;
+      }
+
+      // 安全触发 Telegram 震动反馈
+      function safeHaptic(type) {
+        try {
+          if (tg && tg.HapticFeedback) {
+            if (type === 'light' && typeof tg.HapticFeedback.lightImpact === 'function') {
+              tg.HapticFeedback.lightImpact();
+            } else if (type === 'success' && typeof tg.HapticFeedback.notificationOccurred === 'function') {
+              tg.HapticFeedback.notificationOccurred('success');
+            }
+          }
+        } catch (e) {
+          // 忽略震动反馈错误
+        }
       }
 
       // ============================================================
@@ -1046,7 +1092,7 @@
         try {
           const created = await createCard(newCard);
           showToast('卡片已添加 ✅');
-          if (tg) tg.HapticFeedback?.lightImpact?.();
+          safeHaptic('light');
           closeModal();
           await refreshCards();
         } catch (e) {}
@@ -1061,7 +1107,7 @@
           const count = await clearAllCards();
           showToast(`已清空 ${count} 张卡片`);
           await refreshCards();
-          if (tg) tg.HapticFeedback?.notificationOccurred?.('success');
+          safeHaptic('success');
         } catch (e) {}
       }
 
@@ -1088,6 +1134,7 @@
       console.log('💡 Cloudflare 版银行卡小程序已启动');
       console.log('API地址:', API_BASE);
       console.log('用户ID:', getUserId());
+      console.log('Telegram WebApp 就绪:', tgReady);
 
       window.__refresh = refreshCards;
       window.__cards = () => currentCards;
