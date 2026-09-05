@@ -693,18 +693,18 @@
         // 检查 Telegram WebApp 是否可用
         if (typeof window.Telegram !== 'undefined' && window.Telegram.WebApp) {
           tg = window.Telegram.WebApp;
-          
+
           // 安全调用 ready
           if (typeof tg.ready === 'function') {
             tg.ready();
             tgReady = true;
           }
-          
+
           // 安全调用 expand
           if (typeof tg.expand === 'function') {
             tg.expand();
           }
-          
+
           // 应用主题颜色
           if (tg.themeParams) {
             const p = tg.themeParams;
@@ -715,7 +715,7 @@
             document.documentElement.style.setProperty('--tg-theme-button-color', p.button_color || '#3390ec');
             document.documentElement.style.setProperty('--tg-theme-button-text-color', p.button_text_color || '#ffffff');
           }
-          
+
           console.log('✅ Telegram WebApp 初始化成功');
         } else {
           console.warn('⚠️ Telegram WebApp 不可用，使用降级模式');
@@ -729,7 +729,7 @@
       // ============================================================
       //  🔧 配置
       // ============================================================
-      const API_BASE = 'https://your-worker.your-subdomain.workers.dev';
+      const API_BASE = 'https://cardman-api.sijike.com';
       const DEFAULT_IMAGE = 'https://content.95516.com/cards/default/03080000/01/2ccb3c79-1f69-4554-bbc6-1bfa6ec671a0.png';
 
       // ============================================================
@@ -798,7 +798,7 @@
         } catch (e) {
           console.warn('获取 Telegram 用户ID失败，使用降级ID');
         }
-        
+
         // 降级方案：使用 localStorage 模拟用户ID
         let devId = localStorage.getItem('dev_user_id');
         if (!devId) {
